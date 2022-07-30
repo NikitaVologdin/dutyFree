@@ -1,0 +1,254 @@
+@import '_variables.sass'
+@import '_mixins.sass'
+
+
+
+body
+    font-family: 'noto_sans_hebrewlight', sans-serif
+    font-size: 16px
+    height: 100%
+
+.wrapper
+    min-height: 100%
+    background-position: 0 0
+    background-repeat: no-repeat
+    background-image: url("../img/background.png")
+    padding-bottom: 100px
+    display: flex
+    flex-direction: column
+    background-size: cover
+
+.main
+    flex: 1 1 auto
+
+.header
+    padding-top: 3.125em
+    margin-bottom: 5.625em
+
+    &__heading
+        margin: 0 auto
+        width: 100%
+
+
+.container
+    max-width: 1000px
+    margin: 0 auto
+
+.video1
+    position: relative
+    max-height: 523px
+    width: 100%
+    
+
+    .poster
+        object-fit: cover
+        width: 100%
+    
+    iframe
+        width: 100%
+        height: 520px
+        object-fit: cover
+        display: none
+
+
+.play
+    @include adaptive-font(120,64)
+    color: #fff
+    position: absolute
+    top: 38%
+    left: 42%
+    cursor: pointer
+    border: 3px solid #fff
+    border-radius: 75px
+
+@media (max-width: 768px)
+    .play
+        top: 30%
+
+.items
+    display: flex
+    padding: 0 1.875em
+    padding-top: 1em
+    margin-top: 140px
+
+    .item
+        // flex: 0 0 33.33333%
+        position: relative
+
+        &:nth-child(1n+2)
+            padding: 0 1.5625em
+            border-right: 2px solid #e51937
+        
+        &__heading
+            color: #e51937
+            font-weight: 300
+            margin: 0
+            @include adaptive-font(110,64)
+            margin-top: -100px
+            font-family: "Myriad Pro", sans-serif
+            text-align: center             
+        
+        &__paragraph
+            color: black
+            @include adaptive-font(32,16)
+            text-align: center
+            font-weight: 500
+            margin-top: -20px
+            line-height: 45px
+
+        .border
+            position: absolute
+            height: 75%
+            width: 1px
+            border: 2px solid #e51937
+            top: 6.5em
+            left: 20em
+
+@media (max-width: 768px)
+    .items
+        .item:nth-child(n-1)
+            padding: 10px
+        .item__paragraph
+            margin-top: 0
+            line-height: 20px
+        .item
+            // .border
+            //     top: 50px
+            //     left: 80px
+            // .border_positionAdjusment
+            //     left: 9,5%
+                
+.price
+    padding: 30px
+    border: 3px solid #e51937
+    display: flex
+    justify-content: space-between
+    text-align: center
+    margin-top: 110px
+    position: relative
+
+    &__video2
+        flex: 0 0 46%
+
+        .poster2
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+        iframe
+            width: 100%
+            height: 100%
+            object-fit: cover
+            display: none
+
+
+        .play_small
+            @include adaptive-font(64,42)
+            left: 21%    
+
+    &__content
+        flex: 0 0 46%
+
+    .content
+        letter-spacing: -1px
+
+        &__heading
+            @include adaptive-font(90 , 36 )
+            
+            color: #e51937
+            font-weight: 600
+            margin-top: -30px
+
+        &__paragraph
+            @include adaptive-font(50 , 24 )
+            font-weight: 300
+            line-height: 50px
+            margin-top: 40px
+        
+        &__price
+            @include adaptive-font(30 , 16 )
+            font-weight: 500
+            line-height: 65px
+            margin-top: -25px
+            letter-spacing: -2px
+            
+
+    &__label    
+        position: absolute
+        top: -15%
+        right: 15%
+
+.label
+    border: 1px solid #e51937
+    background-color: #e51937
+    border-radius: 50%
+    width: 100px
+    height: 100px
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &__text
+        color: white
+        letter-spacing: -3px
+        @include adaptive-font(48 , 28 )
+
+@media (max-width: 768px) 
+    .price
+        padding: 5px
+
+        .content__paragraph
+            margin-top: 50px
+            line-height: 30px
+        .content__heading
+            margin-top: 0
+        .content__price
+            margin-top: 0
+            letter-spacing: 0
+        
+        .price__label
+            right: 13%
+        .play_small
+            left: 18%
+            top: 42%
+
+        &__label
+            top: -15%
+    .label
+        width: 80px
+        height: 80px
+
+
+.highlights
+    margin-top: 45px
+    display: flex
+    justify-content: space-between
+
+    a
+        flex: 0 0 31%
+        height: 70px
+        color: white
+        background-color: black
+        text-align: center
+        line-height: 70px
+        @include adaptive-font(16,7)
+
+.action
+    margin-top: 30px
+    border: 5px solid black
+
+    &__button
+        background-color: white
+        height: 70px
+        line-height: 70px
+        @include adaptive-font(24,13)
+        text-align: center
+        color: black
+        display: block
+
+.info
+    margin-top: 90px
+
+    &__paragraph
+        text-align: center
+
